@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo12.HelloController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="plus" layoutX="305.0" layoutY="266.0" mnemonicParsing="false" onAction="#pridejPlus" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="+" />
+            <Button fx:id="minus" layoutX="362.0" layoutY="266.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#pridejMinus" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="-" />
+            <TextArea fx:id="vstupyTA" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" layoutX="479.0" layoutY="27.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="328.0" prefWidth="150.0" scaleShape="false" scrollLeft="5.0" scrollTop="5.0" wrapText="true" />
+            <Button fx:id="zpet" layoutX="477.0" layoutY="361.0" mnemonicParsing="false" onAction="#vratZpet" prefHeight="25.0" prefWidth="70.0" text="Zpět" />
+            <Button fx:id="restart" layoutX="556.0" layoutY="361.0" mnemonicParsing="false" onAction="#restartuj" prefHeight="25.0" prefWidth="70.0" text="Restart" />
+            <Button fx:id="tri" layoutX="419.0" layoutY="297.0" mnemonicParsing="false" onAction="#pridejTrojku" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="3" />
+            <Button fx:id="nula" layoutX="419.0" layoutY="266.0" mnemonicParsing="false" onAction="#pridejNulu" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="0" />
+            <Button fx:id="dva" layoutX="362.0" layoutY="297.0" mnemonicParsing="false" onAction="#pridejDvojku" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="2" />
+            <Button fx:id="ctyri" layoutX="305.0" layoutY="331.0" mnemonicParsing="false" onAction="#pridejCtyrku" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="4" />
+            <Button fx:id="sest" layoutX="419.0" layoutY="331.0" mnemonicParsing="false" onAction="#pridejSestku" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="6" />
+            <Button fx:id="pet" layoutX="362.0" layoutY="331.0" mnemonicParsing="false" onAction="#pridejPetku" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="5" />
+            <Button fx:id="sedm" layoutX="305.0" layoutY="361.0" mnemonicParsing="false" onAction="#pridejSedmicku" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="7" />
+            <Button fx:id="osm" layoutX="362.0" layoutY="361.0" mnemonicParsing="false" onAction="#pridejOsmicku" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="8" />
+            <Button fx:id="devet" layoutX="419.0" layoutY="361.0" mnemonicParsing="false" onAction="#pridejDevitku" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="9" />
+            <Button fx:id="jedna" layoutX="305.0" layoutY="297.0" mnemonicParsing="false" onAction="#pridejJednicku" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="1" />
+            <TextArea fx:id="vystupTA" disable="true" layoutX="8.0" layoutY="264.0" prefHeight="122.0" prefWidth="288.0" wrapText="true" />
+            <Circle fx:id="druhyStav" layoutX="235.0" layoutY="138.0" radius="33.0" stroke="BLACK" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" opacity="0.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" opacity="0.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill></Circle>
+            <Circle fx:id="tretiStav" fill="TRANSPARENT" layoutX="374.0" layoutY="138.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="prvniStav" fill="#e1ff0000" layoutX="103.0" layoutY="138.0" radius="33.0" stroke="#c4ff01" strokeType="INSIDE" />
+            <Line fx:id="lineDoS1" endX="-67.0" layoutX="136.0" layoutY="138.0" startX="-100.0" stroke="BLUE" />
+            <Line fx:id="lineDoA1" endX="-35.0" endY="1.0" layoutX="237.0" layoutY="137.0" startX="-100.0" />
+            <Line fx:id="lineDoB1" endX="-31.0" layoutX="372.0" layoutY="138.0" startX="-104.0" />
+            <Line endX="-74.0" endY="-22.0" layoutX="504.0" layoutY="128.0" startX="-97.0" startY="1.0" />
+            <Line fx:id="lineDoA2" endX="1.0" endY="37.0" layoutX="201.0" layoutY="101.0" startX="-16.0" startY="25.0" />
+            <Line fx:id="lineDoA3" endX="-9.0" endY="27.0" layoutX="211.0" layoutY="111.0" startX="-25.0" startY="38.0" />
+            <Line fx:id="lineDoB2" endX="3.0" endY="40.0" layoutX="338.0" layoutY="98.0" startX="-14.0" startY="29.0" />
+            <Line fx:id="lineDoB3" endX="-8.29290771484375" endY="23.70709228515625" layoutX="350.0" layoutY="115.0" startX="-26.0" startY="33.0" />
+            <Line fx:id="oblouk1Line2121" endX="16.70709228515625" endY="46.29290771484375" layoutX="414.0" layoutY="59.0" startX="-7.0" startY="53.0" />
+            <Line fx:id="oblouk1Line2122" endX="-27.0" endY="37.70709228515625" layoutX="451.0" layoutY="92.0" startX="-19.79290771484375" startY="12.79290771484375" />
+            <CubicCurve fx:id="lineZAdoA1" controlX1="-111.0" controlX2="-26.0" controlY1="-29.0" controlY2="-29.0" endX="-57.0" endY="25.0" fill="#ffffff00" layoutX="307.0" layoutY="84.0" startX="-88.0" startY="25.0" stroke="BLACK" />
+            <CubicCurve fx:id="lineZBdoB1" controlX1="-111.0" controlX2="-26.0" controlY1="-29.0" controlY2="-29.0" endX="-57.0" endY="25.0" fill="#ffffff00" layoutX="445.0" layoutY="83.0" startX="-88.0" startY="25.0" stroke="BLACK" />
+            <Line fx:id="lineZAdoA2" endX="21.0" endY="33.0" layoutX="243.0" layoutY="66.0" startX="7.0" startY="44.18255615234375" />
+            <Line fx:id="lineZBdoB2" endX="9.0" endY="36.0" layoutX="394.0" layoutY="63.0" startX="-5.0" startY="46.18255615234375" />
+            <Line fx:id="lineZAdoA3" endX="14.0" endY="38.0" layoutX="227.0" layoutY="58.0" startX="22.29290771484375" startY="52.8896484375" />
+            <Line fx:id="lineZBdoB3" endX="43.121337890625" endY="85.0" layoutX="343.0" layoutY="10.0" startX="44.0" startY="99.18255615234375" />
+            <Line fx:id="lineDoS2" endX="-5.0" endY="42.0" layoutX="75.0" layoutY="96.0" startX="-21.0" startY="30.0" stroke="#0040ff" />
+            <Line fx:id="lineDoS3" endX="-8.29290771484375" endY="22.70709228515625" layoutX="79.0" layoutY="116.0" startX="-24.0" startY="35.0" stroke="#0015ff" />
+            <Text layoutX="86.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S" textAlignment="CENTER" wrappingWidth="34.0">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="218.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" textAlignment="CENTER" wrappingWidth="34.0">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="357.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B" textAlignment="CENTER" wrappingWidth="34.0">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="136.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+/-/0-9" textAlignment="CENTER" wrappingWidth="43.892425537109375" />
+            <Text layoutX="274.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="," textAlignment="CENTER" wrappingWidth="43.892425537109375" />
+            <Text layoutX="222.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0-9" textAlignment="CENTER" wrappingWidth="25.121307373046875" />
+            <Text layoutX="361.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0-9" textAlignment="CENTER" wrappingWidth="25.121307373046875" />
+            <Button fx:id="carka" layoutX="419.0" layoutY="233.0" mnemonicParsing="false" onAction="#pridejCarku" onKeyPressed="#keyPressed" prefHeight="25.0" prefWidth="51.0" text="," />
+            <Label layoutX="479.0" layoutY="6.0" prefHeight="17.0" prefWidth="150.0" text="Vstupy:" />
+            <Label layoutX="14.0" layoutY="237.0" prefHeight="17.0" prefWidth="288.0" text="Výsledek:" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="17.0" prefWidth="419.0" text="DKA REAL ČÍSLA" textAlignment="CENTER" textFill="#ffcc00" wrapText="true">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
